@@ -1,753 +1,125 @@
-<style>
-.ips-dementia-page {
-  --ips-navy: #061844;
-  --ips-teal: #00A9BD;
-  --ips-yellow: #FFD84D;
-  --ips-white: #FFFFFF;
-  --ips-ink: #10203D;
-  --ips-soft: #F4F8FA;
-  --ips-line: rgba(6, 24, 68, 0.12);
-  --ips-shadow: 0 18px 45px rgba(6, 24, 68, 0.12);
-  color: var(--ips-ink);
-  background: var(--ips-white);
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1.8;
-}
-
-.ips-dementia-page,
-.ips-dementia-page * {
-  box-sizing: border-box;
-}
-
-.ips-dementia-page img {
-  display: block;
-  max-width: 100%;
-}
-
-.ips-dementia-page a {
-  color: inherit;
-}
-
-.ips-dementia-page .ips-container {
-  width: min(1180px, calc(100% - 48px));
-  margin: 0 auto;
-}
-
-.ips-dementia-page .ips-section {
-  padding: 82px 0;
-}
-
-.ips-dementia-page .ips-section-soft {
-  background: var(--ips-soft);
-}
-
-.ips-dementia-page .ips-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  margin: 0 0 18px;
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--ips-yellow);
-  color: var(--ips-navy);
-  font-size: 0.84rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.ips-dementia-page .ips-section-heading {
-  margin: 0 0 18px;
-  color: var(--ips-navy);
-  font-size: clamp(1.7rem, 2.5vw, 2.35rem);
-  font-weight: 700;
-  line-height: 1.15;
-}
-
-.ips-dementia-page .ips-lead {
-  margin: 0;
-  font-size: 1.12rem;
-  line-height: 1.75;
-  color: rgba(16, 32, 61, 0.84);
-}
-
-.ips-dementia-page .ips-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 50px;
-  padding: 14px 22px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
-}
-
-.ips-dementia-page .ips-btn:hover {
-  transform: translateY(-2px);
-}
-
-.ips-dementia-page .ips-btn-primary {
-  background: var(--ips-yellow);
-  color: var(--ips-navy);
-  box-shadow: 0 12px 28px rgba(255, 216, 77, 0.28);
-}
-
-.ips-dementia-page .ips-btn-secondary {
-  border: 1.5px solid rgba(255, 255, 255, 0.8);
-  color: var(--ips-white);
-  background: transparent;
-}
-
-.ips-dementia-page .ips-btn-outline {
-  border: 1.5px solid rgba(6, 24, 68, 0.18);
-  color: var(--ips-navy);
-  background: var(--ips-white);
-}
-
-.ips-dementia-page .ips-hero {
-  position: relative;
-  overflow: hidden;
-  padding: 76px 0;
-  background:
-    radial-gradient(circle at 85% 15%, rgba(255, 216, 77, 0.24), transparent 28%),
-    linear-gradient(135deg, #061844 0%, #0A2554 56%, #007E95 100%);
-  color: var(--ips-white);
-}
-
-.ips-dementia-page .ips-hero::before {
-  content: "";
-  position: absolute;
-  inset: auto -120px -180px auto;
-  width: 430px;
-  height: 430px;
-  border-radius: 50%;
-  background: rgba(255, 216, 77, 0.14);
-}
-
-.ips-dementia-page .ips-hero-grid {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.82fr);
-  gap: 52px;
-  align-items: center;
-}
-
-.ips-dementia-page .ips-hero h1 {
-  margin: 0 0 10px;
-  font-size: clamp(2.1rem, 4vw, 3.35rem);
-  font-weight: 700;
-  line-height: 1.06;
-  color: var(--ips-white);
-}
-
-.ips-dementia-page .ips-hero h2 {
-  margin: 0 0 22px;
-  color: var(--ips-yellow);
-  font-size: clamp(1.18rem, 2vw, 1.5rem);
-  font-weight: 700;
-  line-height: 1.3;
-}
-
-.ips-dementia-page .ips-hero-copy > p:last-of-type {
-  max-width: 620px;
-  margin: 0;
-  font-size: 1.14rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.ips-dementia-page .ips-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 30px;
-}
-
-.ips-dementia-page .ips-hero-media {
-  position: relative;
-}
-
-.ips-dementia-page .ips-hero-media::before {
-  content: "";
-  position: absolute;
-  inset: -16px auto auto -16px;
-  width: 120px;
-  height: 120px;
-  border-radius: 28px;
-  background: var(--ips-yellow);
-  z-index: -1;
-}
-
-.ips-dementia-page .ips-hero-media img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 28px;
-  border: 7px solid rgba(255, 255, 255, 0.96);
-  box-shadow: var(--ips-shadow);
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.ips-dementia-page .ips-overview-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 360px;
-  gap: 34px;
-  align-items: start;
-}
-
-.ips-dementia-page .ips-overview-copy p {
-  margin: 0 0 18px;
-}
-
-.ips-dementia-page .ips-highlight-card {
-  padding: 28px;
-  border-radius: 24px;
-  background: var(--ips-navy);
-  color: var(--ips-white);
-  box-shadow: var(--ips-shadow);
-}
-
-.ips-dementia-page .ips-highlight-card span {
-  display: block;
-  margin-bottom: 10px;
-  color: var(--ips-yellow);
-  font-size: 0.86rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.ips-dementia-page .ips-highlight-card p {
-  margin: 0;
-  font-size: 1.08rem;
-  line-height: 1.75;
-}
-
-.ips-dementia-page .ips-card-grid {
-  display: grid;
-  gap: 18px;
-}
-
-.ips-dementia-page .ips-support-grid {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  margin-top: 34px;
-}
-
-.ips-dementia-page .ips-mini-card {
-  min-height: 150px;
-  padding: 24px 20px;
-  border-radius: 22px;
-  background: var(--ips-white);
-  border: 1px solid var(--ips-line);
-  box-shadow: 0 10px 24px rgba(6, 24, 68, 0.06);
-}
-
-.ips-dementia-page .ips-mini-card::before {
-  content: "";
-  display: block;
-  width: 42px;
-  height: 6px;
-  margin-bottom: 18px;
-  border-radius: 999px;
-  background: var(--ips-teal);
-}
-
-.ips-dementia-page .ips-mini-card p {
-  margin: 0;
-  font-weight: 600;
-  color: var(--ips-navy);
-}
-
-.ips-dementia-page .ips-split {
-  display: grid;
-  grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1fr);
-  gap: 46px;
-  align-items: center;
-}
-
-.ips-dementia-page .ips-image-frame img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: 28px;
-  box-shadow: var(--ips-shadow);
-  background: var(--ips-soft);
-}
-
-.ips-dementia-page .ips-checklist {
-  list-style: none;
-  padding: 0;
-  margin: 26px 0 0;
-}
-
-.ips-dementia-page .ips-checklist li {
-  position: relative;
-  margin: 0 0 16px;
-  padding-left: 34px;
-  font-size: 1.04rem;
-  line-height: 1.7;
-}
-
-.ips-dementia-page .ips-checklist li::before {
-  content: "✓";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: inline-grid;
-  place-items: center;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: rgba(0, 169, 189, 0.14);
-  color: var(--ips-teal);
-  font-size: 0.9rem;
-  font-weight: 800;
-}
-
-.ips-dementia-page .ips-services-top {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 360px;
-  gap: 30px;
-  align-items: end;
-  margin-bottom: 34px;
-}
-
-.ips-dementia-page .ips-services-top img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 24px;
-  box-shadow: var(--ips-shadow);
-  background: var(--ips-soft);
-}
-
-.ips-dementia-page .ips-services-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.ips-dementia-page .ips-service-card {
-  padding: 28px;
-  border-radius: 24px;
-  background: var(--ips-white);
-  border: 1px solid var(--ips-line);
-  box-shadow: 0 12px 28px rgba(6, 24, 68, 0.07);
-}
-
-.ips-dementia-page .ips-service-number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  margin-bottom: 18px;
-  border-radius: 50%;
-  background: var(--ips-yellow);
-  color: var(--ips-navy);
-  font-weight: 800;
-}
-
-.ips-dementia-page .ips-service-card h3 {
-  margin: 0 0 10px;
-  color: var(--ips-navy);
-  font-size: 1.18rem;
-  line-height: 1.3;
-}
-
-.ips-dementia-page .ips-service-card p {
-  margin: 0;
-  line-height: 1.75;
-  color: rgba(16, 32, 61, 0.82);
-}
-
-.ips-dementia-page .ips-approach {
-  background:
-    radial-gradient(circle at 90% 0%, rgba(255, 216, 77, 0.18), transparent 26%),
-    var(--ips-navy);
-  color: var(--ips-white);
-}
-
-.ips-dementia-page .ips-approach .ips-section-heading {
-  color: var(--ips-white);
-}
-
-.ips-dementia-page .ips-approach .ips-lead {
-  max-width: 720px;
-  color: rgba(255, 255, 255, 0.88);
-}
-
-.ips-dementia-page .ips-values-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 30px;
-}
-
-.ips-dementia-page .ips-value {
-  padding: 20px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-}
-
-.ips-dementia-page .ips-value strong {
-  display: block;
-  color: var(--ips-yellow);
-  font-size: 1rem;
-}
-
-.ips-dementia-page .ips-downloads-wrap {
-  display: grid;
-  gap: 24px;
-}
-
-.ips-dementia-page .ips-download-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-.ips-dementia-page .ips-download-actions .ips-btn {
-  min-width: 250px;
-}
-
-.ips-dementia-page .ips-referral {
-  padding: 30px;
-  border-radius: 28px;
-  background: linear-gradient(135deg, rgba(0, 169, 189, 0.12), rgba(255, 216, 77, 0.22));
-  border: 1px solid rgba(6, 24, 68, 0.1);
-}
-
-.ips-dementia-page .ips-referral h3 {
-  margin: 0 0 8px;
-  color: var(--ips-navy);
-  font-size: 1.35rem;
-}
-
-.ips-dementia-page .ips-referral p {
-  margin: 0 0 18px;
-  line-height: 1.75;
-}
-
-.ips-dementia-page .ips-contact {
-  background: var(--ips-soft);
-}
-
-.ips-dementia-page .ips-contact-grid {
-  display: grid;
-  grid-template-columns: 1.2fr repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 28px;
-}
-
-.ips-dementia-page .ips-contact-card {
-  padding: 24px;
-  border-radius: 22px;
-  background: var(--ips-white);
-  border: 1px solid var(--ips-line);
-}
-
-.ips-dementia-page .ips-contact-card h3 {
-  margin: 0 0 10px;
-  color: var(--ips-navy);
-  font-size: 1.06rem;
-}
-
-.ips-dementia-page .ips-contact-card p,
-.ips-dementia-page .ips-contact-card a {
-  margin: 0;
-  line-height: 1.75;
-  color: rgba(16, 32, 61, 0.86);
-  text-decoration: none;
-}
-
-.ips-dementia-page .ips-contact-card a:hover {
-  color: var(--ips-teal);
-}
-
-@media (max-width: 1080px) {
-  .ips-dementia-page .ips-support-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .ips-dementia-page .ips-services-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .ips-dementia-page .ips-contact-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 900px) {
-  .ips-dementia-page .ips-container {
-    width: min(100% - 32px, 1180px);
-  }
-
-  .ips-dementia-page .ips-section {
-    padding: 68px 0;
-  }
-
-  .ips-dementia-page .ips-hero {
-    padding: 62px 0;
-  }
-
-  .ips-dementia-page .ips-hero-grid,
-  .ips-dementia-page .ips-overview-grid,
-  .ips-dementia-page .ips-split,
-  .ips-dementia-page .ips-services-top {
-    grid-template-columns: 1fr;
-  }
-
-  .ips-dementia-page .ips-hero-media {
-    max-width: 620px;
-  }
-
-  .ips-dementia-page .ips-services-top img {
-    max-width: 520px;
-  }
-
-  .ips-dementia-page .ips-values-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 680px) {
-  .ips-dementia-page .ips-section {
-    padding: 56px 0;
-  }
-
-  .ips-dementia-page .ips-hero {
-    padding: 52px 0;
-  }
-
-  .ips-dementia-page .ips-support-grid,
-  .ips-dementia-page .ips-services-grid,
-  .ips-dementia-page .ips-values-grid,
-  .ips-dementia-page .ips-contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .ips-dementia-page .ips-actions,
-  .ips-dementia-page .ips-download-actions {
-    flex-direction: column;
-  }
-
-  .ips-dementia-page .ips-btn,
-  .ips-dementia-page .ips-download-actions .ips-btn {
-    width: 100%;
-  }
-
-  .ips-dementia-page .ips-mini-card {
-    min-height: 0;
-  }
-
-  .ips-dementia-page .ips-service-card,
-  .ips-dementia-page .ips-referral,
-  .ips-dementia-page .ips-highlight-card,
-  .ips-dementia-page .ips-contact-card {
-    padding: 22px;
-  }
-}
-</style>
-
-<div class="ips-dementia-page">
-  <section class="ips-hero">
-    <div class="ips-container ips-hero-grid">
-      <div class="ips-hero-copy">
-        <p class="ips-eyebrow">Dementia Care</p>
-        <h1>Dementia Nurse Consulting</h1>
-        <h2>Specialist Support for Dementia Care</h2>
-        <p>We provide compassionate, personalised support for people living with dementia and the families who care for them.</p>
-        <div class="ips-actions">
-          <a class="ips-btn ips-btn-primary" href="#ips-contact">Contact Dementia Care</a>
-          <a class="ips-btn ips-btn-secondary" href="#ips-downloads">Download Information</a>
-        </div>
-      </div>
-      <div class="ips-hero-media">
-        <img src="assets/Dementia_Nurse_Consulting.png" alt="Dementia nurse supporting an older person">
-      </div>
-    </div>
-  </section>
-
-  <section class="ips-section">
-    <div class="ips-container ips-overview-grid">
-      <div class="ips-overview-copy">
-        <p class="ips-eyebrow">Overview</p>
-        <h2 class="ips-section-heading">Compassionate clinical support in the community</h2>
-        <p class="ips-lead">Working alongside individuals, families, carers, and providers, we deliver person-centred dementia support that promotes dignity, safety, wellbeing, and meaningful connection.</p>
-      </div>
-      <aside class="ips-highlight-card">
-        <span>Service Area</span>
-        <p>Supporting, Understanding and Strengthening Dementia Care Across East Gippsland.</p>
-      </aside>
-    </div>
-  </section>
-
-  <section class="ips-section ips-section-soft">
-    <div class="ips-container">
-      <p class="ips-eyebrow">Who We Support</p>
-      <h2 class="ips-section-heading">Support tailored to every stage of care</h2>
-      <div class="ips-card-grid ips-support-grid">
-        <article class="ips-mini-card">
-          <p>People living with dementia at all stages</p>
-        </article>
-        <article class="ips-mini-card">
-          <p>Support at Home (SaH) recipients</p>
-        </article>
-        <article class="ips-mini-card">
-          <p>Families and carers</p>
-        </article>
-        <article class="ips-mini-card">
-          <p>Home care recipients</p>
-        </article>
-        <article class="ips-mini-card">
-          <p>Aged care and community providers</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="ips-section">
-    <div class="ips-container ips-split">
-      <div class="ips-image-frame">
-        <img src="assets/How_We_Help.png" alt="Supportive dementia care in the community" loading="lazy">
-      </div>
-      <div>
-        <p class="ips-eyebrow">How We Help</p>
-        <h2 class="ips-section-heading">Practical guidance with a human centre</h2>
-        <p class="ips-lead">Our support is designed to strengthen care, reduce distress, and help people remain connected to identity, independence, and quality of life.</p>
-        <ul class="ips-checklist">
-          <li>Personalised care planning</li>
-          <li>Family and carer guidance</li>
-          <li>Changed behaviour support and dementia strategies</li>
-          <li>Support for home care and aged care providers</li>
-          <li>Improving wellbeing, independence and quality of life</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="ips-section ips-section-soft">
-    <div class="ips-container">
-      <div class="ips-services-top">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dementia Care | Inner Peace Services</title>
+  <style>
+    :root{--ips-navy:#061844;--ips-navy-2:#0a2554;--ips-teal:#00a9bd;--ips-teal-dark:#007e95;--ips-yellow:#ffd84d;--ips-white:#fff;--ips-soft:#f4f8fa;--ips-soft-2:#eef7f8;--ips-ink:#10203d;--ips-muted:rgba(16,32,61,.75);--ips-line:rgba(6,24,68,.12);--ips-shadow:0 18px 45px rgba(6,24,68,.12)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ips-ink);background:var(--ips-white);font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.7}img{display:block;max-width:100%}a{color:inherit}.ips-dementia-page{overflow:hidden;background:var(--ips-white)}.ips-container{width:min(1160px,calc(100% - 48px));margin:0 auto}.ips-section{padding:76px 0}.ips-section-soft{background:var(--ips-soft)}
+    .ips-eyebrow{display:inline-flex;align-items:center;margin:0 0 16px;padding:8px 16px;border-radius:999px;background:var(--ips-yellow);color:var(--ips-navy);font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.ips-heading{margin:0 0 16px;color:var(--ips-navy);font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,4vw,3rem);line-height:1.08;letter-spacing:-.02em}.ips-subheading{margin:0;color:var(--ips-muted);font-size:1.08rem;line-height:1.75;max-width:760px}
+    .ips-btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 22px;border-radius:999px;border:0;cursor:pointer;font-size:1rem;font-weight:800;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}.ips-btn:hover{transform:translateY(-2px)}.ips-btn-primary{background:var(--ips-yellow);color:var(--ips-navy);box-shadow:0 12px 28px rgba(255,216,77,.28)}.ips-btn-secondary{border:1.5px solid rgba(255,255,255,.78);color:var(--ips-white);background:transparent}.ips-btn-outline{border:1.5px solid rgba(6,24,68,.18);color:var(--ips-navy);background:var(--ips-white)}
+    .ips-hero{position:relative;overflow:hidden;padding:78px 0;color:var(--ips-white);background:radial-gradient(circle at 85% 16%,rgba(255,216,77,.24),transparent 28%),linear-gradient(135deg,var(--ips-navy) 0%,var(--ips-navy-2) 55%,var(--ips-teal-dark) 100%)}.ips-hero:after{content:"";position:absolute;right:-160px;bottom:-190px;width:460px;height:460px;border-radius:50%;background:rgba(255,216,77,.13)}.ips-hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,.82fr);gap:52px;align-items:center}.ips-hero h1{margin:0 0 10px;color:var(--ips-white);font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.4rem,5vw,4rem);line-height:1.02;letter-spacing:-.03em}.ips-hero h2{margin:0 0 22px;color:var(--ips-yellow);font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.25rem,2vw,1.65rem);line-height:1.3}.ips-hero p{max-width:620px;margin:0;color:rgba(255,255,255,.92);font-size:1.08rem}.ips-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}.ips-hero-media{position:relative}.ips-hero-media:before{content:"";position:absolute;top:-16px;left:-16px;z-index:-1;width:120px;height:120px;border-radius:28px;background:var(--ips-yellow)}.ips-hero-media img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;border-radius:28px;border:7px solid rgba(255,255,255,.96);box-shadow:var(--ips-shadow);background:rgba(255,255,255,.08)}
+    .ips-simple-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:42px;align-items:start}.ips-lead-card{padding:30px;border-radius:26px;background:linear-gradient(135deg,var(--ips-soft-2),var(--ips-white));border:1px solid var(--ips-line);box-shadow:var(--ips-shadow)}.ips-lead-card p{margin:0;color:var(--ips-muted);font-size:1.05rem}.ips-pill-list{display:flex;flex-wrap:wrap;gap:12px;padding:0;margin:28px 0 0;list-style:none}.ips-pill-list li{padding:11px 15px;border-radius:999px;background:var(--ips-white);border:1px solid var(--ips-line);color:var(--ips-navy);font-weight:700;box-shadow:0 8px 20px rgba(6,24,68,.05)}
+    .ips-support-help{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:34px}.ips-info-card{padding:30px;border-radius:26px;background:var(--ips-white);border:1px solid var(--ips-line);box-shadow:var(--ips-shadow)}.ips-info-card h3{margin:0 0 18px;color:var(--ips-navy);font-family:Georgia,"Times New Roman",serif;font-size:1.55rem;line-height:1.2}.ips-checklist{list-style:none;margin:0;padding:0}.ips-checklist li{position:relative;margin:0 0 14px;padding-left:34px;color:var(--ips-muted)}.ips-checklist li:before{content:"✓";position:absolute;top:2px;left:0;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:rgba(0,169,189,.14);color:var(--ips-teal);font-size:.86rem;font-weight:900}
+    .ips-services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:34px}.ips-service{padding:24px;border-radius:22px;background:var(--ips-white);border:1px solid var(--ips-line);box-shadow:0 12px 28px rgba(6,24,68,.07)}.ips-service strong{display:block;margin-bottom:8px;color:var(--ips-navy);font-size:1.02rem}.ips-service p{margin:0;color:var(--ips-muted);line-height:1.65}
+    .ips-form-section{background:radial-gradient(circle at 90% 0%,rgba(255,216,77,.18),transparent 26%),linear-gradient(135deg,var(--ips-navy),#09275d);color:var(--ips-white)}.ips-form-section .ips-heading{color:var(--ips-white)}.ips-form-section .ips-subheading{color:rgba(255,255,255,.84)}.ips-form-card{margin-top:34px;padding:30px;border-radius:30px;background:var(--ips-white);color:var(--ips-ink);box-shadow:0 24px 70px rgba(0,0,0,.22)}.ips-form-note{margin:0 0 24px;padding:16px 18px;border-radius:18px;background:#fff8d8;color:#3b2f00;border-left:5px solid var(--ips-yellow);font-size:.98rem}.ips-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.ips-form-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.ips-form-group{margin-bottom:18px}.ips-form-group.full{grid-column:1/-1}.ips-form-group label,.ips-fieldset-title{display:block;margin:0 0 8px;color:var(--ips-navy);font-weight:800;line-height:1.3}.ips-form-group input,.ips-form-group select,.ips-form-group textarea{width:100%;min-height:48px;padding:12px 14px;border:1px solid rgba(6,24,68,.18);border-radius:14px;outline:none;background:var(--ips-white);color:var(--ips-ink);font:inherit;transition:border .2s ease,box-shadow .2s ease}.ips-form-group textarea{min-height:116px;resize:vertical}.ips-form-group input:focus,.ips-form-group select:focus,.ips-form-group textarea:focus{border-color:var(--ips-teal);box-shadow:0 0 0 4px rgba(0,169,189,.12)}.ips-fieldset{margin:0 0 24px;padding:24px;border:1px solid var(--ips-line);border-radius:24px;background:#fbfdfe}.ips-fieldset-title{margin-bottom:18px;font-family:Georgia,"Times New Roman",serif;font-size:1.35rem}.ips-radio-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}.ips-option{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid rgba(6,24,68,.14);border-radius:999px;background:var(--ips-white);color:var(--ips-ink);font-weight:700}.ips-option input{width:auto;min-height:0}.ips-consent{display:grid;gap:12px;margin:8px 0 22px}.ips-consent label{display:flex;align-items:flex-start;gap:10px;padding:14px;border-radius:16px;background:var(--ips-soft);color:var(--ips-muted);font-weight:600;line-height:1.5}.ips-consent input{margin-top:4px}.ips-hidden{display:none}
+    .ips-contact-grid{display:grid;grid-template-columns:1.2fr repeat(3,minmax(0,1fr));gap:18px;margin-top:30px}.ips-contact-card{padding:24px;border-radius:22px;background:var(--ips-white);border:1px solid var(--ips-line);box-shadow:0 10px 24px rgba(6,24,68,.06)}.ips-contact-card h3{margin:0 0 8px;color:var(--ips-navy);font-size:1.08rem}.ips-contact-card p,.ips-contact-card a{margin:0;color:var(--ips-muted);text-decoration:none;overflow-wrap:anywhere}.ips-contact-card a:hover{color:var(--ips-teal)}
+    @media (max-width:1024px){.ips-hero-grid,.ips-simple-grid{grid-template-columns:1fr}.ips-hero-media{max-width:620px}.ips-services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ips-contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:820px){.ips-container{width:min(100% - 32px,1160px)}.ips-section,.ips-hero{padding:58px 0}.ips-support-help,.ips-form-grid,.ips-form-grid.three{grid-template-columns:1fr}.ips-form-card,.ips-fieldset{padding:22px}}@media (max-width:620px){.ips-actions{flex-direction:column}.ips-btn{width:100%}.ips-hero-media img{aspect-ratio:4/4}.ips-services-grid,.ips-contact-grid{grid-template-columns:1fr}.ips-pill-list li{width:100%}}
+  </style>
+</head>
+<body>
+  <main class="ips-dementia-page">
+    <section class="ips-hero">
+      <div class="ips-container ips-hero-grid">
         <div>
-          <p class="ips-eyebrow">Specialist Clinical Services</p>
-          <h2 class="ips-section-heading">Specialist dementia care, translated into practical action</h2>
-          <p class="ips-lead">Clinical insight is paired with clear, usable strategies for individuals, families, carers, and care teams.</p>
+          <p class="ips-eyebrow">Dementia Care</p>
+          <h1>Dementia Nurse Consulting</h1>
+          <h2>Specialist Support for Dementia Care</h2>
+          <p>Compassionate, personalised support for people living with dementia, their families, carers, and care providers across East Gippsland.</p>
+          <div class="ips-actions">
+            <a class="ips-btn ips-btn-primary" href="#online-referral">Complete Online Referral</a>
+            <a class="ips-btn ips-btn-secondary" href="#ips-contact">Contact Dementia Care</a>
+          </div>
         </div>
-        <img src="assets/Specialist_Clinical_Services.png" alt="Specialist dementia clinical services" loading="lazy">
-      </div>
-
-      <div class="ips-card-grid ips-services-grid">
-        <article class="ips-service-card">
-          <span class="ips-service-number">1</span>
-          <h3>Behaviour Assessment &amp; Support</h3>
-          <p>Comprehensive assessment of behaviour with practical strategies to reduce distress and improve care.</p>
-        </article>
-
-        <article class="ips-service-card">
-          <span class="ips-service-number">2</span>
-          <h3>Individualised Care Planning</h3>
-          <p>Development and review of person-centred care plans responsive to changing needs.</p>
-        </article>
-
-        <article class="ips-service-card">
-          <span class="ips-service-number">3</span>
-          <h3>Family &amp; Carer Support</h3>
-          <p>Education, guidance and practical tools for families and informal carers.</p>
-        </article>
-
-        <article class="ips-service-card">
-          <span class="ips-service-number">4</span>
-          <h3>Provider &amp; Workforce Consultation</h3>
-          <p>Clinical consultation for home care and aged care providers, and support teams to strengthen capability and consistency of care.</p>
-        </article>
-
-        <article class="ips-service-card">
-          <span class="ips-service-number">5</span>
-          <h3>Quality of Life Strategies</h3>
-          <p>Support focused on meaningful engagement, wellbeing and independence while maintaining identity and purpose.</p>
-        </article>
-
-        <article class="ips-service-card">
-          <span class="ips-service-number">6</span>
-          <h3>Assessment, Diagnosis &amp; Ongoing Support</h3>
-          <p>Initial cognitive assessments, geriatric assessment, diagnosis support, and ongoing diagnostic support.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="ips-section ips-approach">
-    <div class="ips-container">
-      <p class="ips-eyebrow">Our Approach</p>
-      <h2 class="ips-section-heading">Every person deserves dignity, respect, and meaningful connection</h2>
-      <p class="ips-lead">Care should be compassionate, practical, and grounded in best practice while remaining deeply respectful of identity, choice, and lived experience.</p>
-
-      <div class="ips-values-grid">
-        <div class="ips-value"><strong>Person-centred</strong></div>
-        <div class="ips-value"><strong>Compassionate and practical</strong></div>
-        <div class="ips-value"><strong>Focused on safety and wellbeing</strong></div>
-        <div class="ips-value"><strong>Aligned with aged care standards and best practice</strong></div>
-        <div class="ips-value"><strong>Respectful of identity, choice and experience</strong></div>
-        <div class="ips-value"><strong>Collaborative with multidisciplinary partnerships</strong></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="ips-section" id="ips-downloads">
-    <div class="ips-container ips-downloads-wrap">
-      <div>
-        <p class="ips-eyebrow">Download Flyers</p>
-        <h2 class="ips-section-heading">Information to share with families, carers, and providers</h2>
-      </div>
-
-      <div class="ips-download-actions">
-        <a class="ips-btn ips-btn-outline" href="[A5_FLYER_PDF_URL]" target="_blank" rel="noopener">Download A5 Flyer</a>
-        <a class="ips-btn ips-btn-outline" href="[DL_FRONT_BACK_PDF_URL]" target="_blank" rel="noopener">Download DL Brochure Front/Back</a>
-        <a class="ips-btn ips-btn-outline" href="[DL_INSIDE_PDF_URL]" target="_blank" rel="noopener">Download DL Brochure Inside</a>
-      </div>
-
-      <div class="ips-referral">
-        <h3>Referral Form</h3>
-        <p>Need to make a referral? Download the referral form and send it through when complete.</p>
-        <a class="ips-btn ips-btn-primary" href="#">Download Referral Form</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="ips-section ips-contact" id="ips-contact">
-    <div class="ips-container">
-      <p class="ips-eyebrow">Contact</p>
-      <h2 class="ips-section-heading">Speak with the Dementia Care team</h2>
-
-      <div class="ips-contact-grid">
-        <div class="ips-contact-card">
-          <h3>Inner Peace Services</h3>
-          <p>Specialist support for dementia care across East Gippsland.</p>
-        </div>
-
-        <div class="ips-contact-card">
-          <h3>Annette Keat</h3>
-          <p><a href="tel:0419853811">0419 853 811</a></p>
-        </div>
-
-        <div class="ips-contact-card">
-          <h3>Lisa Tyter</h3>
-          <p><a href="tel:0477051130">0477 051 130</a></p>
-        </div>
-
-        <div class="ips-contact-card">
-          <h3>Email &amp; Website</h3>
-          <p><a href="mailto:dementiacare@innerpeace.vision">dementiacare@innerpeace.vision</a></p>
-          <p><a href="https://www.innerpeace.vision" target="_blank" rel="noopener">www.innerpeace.vision</a></p>
+        <div class="ips-hero-media">
+          <img src="assets/Dementia_Nurse_Consulting.png" alt="Dementia nurse supporting an older person" />
         </div>
       </div>
-    </div>
-  </section>
-</div>
+    </section>
+
+    <section class="ips-section">
+      <div class="ips-container ips-simple-grid">
+        <div>
+          <p class="ips-eyebrow">Overview</p>
+          <h2 class="ips-heading">Clear, practical dementia support with a human centre.</h2>
+        </div>
+        <div class="ips-lead-card">
+          <p>Working alongside individuals, families, carers, and providers, we deliver person-centred dementia support that promotes dignity, safety, wellbeing, and meaningful connection to home and community.</p>
+          <ul class="ips-pill-list" aria-label="Service focus areas">
+            <li>Person-centred</li><li>Compassionate</li><li>Practical</li><li>Aligned with aged care standards</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="ips-section ips-section-soft">
+      <div class="ips-container">
+        <p class="ips-eyebrow">Support & Services</p>
+        <h2 class="ips-heading">Simple support pathways for families, referrers, and care teams.</h2>
+        <p class="ips-subheading">The page has been simplified so visitors can quickly understand who the service supports, how Inner Peace can help, and how to complete a referral online.</p>
+        <div class="ips-support-help">
+          <article class="ips-info-card"><h3>Who We Support</h3><ul class="ips-checklist"><li>People living with dementia at all stages</li><li>Support at Home (SaH) recipients</li><li>Families and carers</li><li>Home care recipients</li><li>Aged care and community providers</li></ul></article>
+          <article class="ips-info-card"><h3>How We Help</h3><ul class="ips-checklist"><li>Personalised care planning</li><li>Family and carer guidance</li><li>Changed behaviour support and dementia strategies</li><li>Support for home care and aged care providers</li><li>Improving wellbeing, independence and quality of life</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ips-section">
+      <div class="ips-container">
+        <p class="ips-eyebrow">Specialist Clinical Services</p>
+        <h2 class="ips-heading">Specialist dementia care translated into practical action.</h2>
+        <div class="ips-services-grid">
+          <article class="ips-service"><strong>Behaviour Assessment & Support</strong><p>Assessment of behaviour with practical strategies to reduce distress and improve care.</p></article>
+          <article class="ips-service"><strong>Individualised Care Planning</strong><p>Development and review of care plans responsive to changing needs.</p></article>
+          <article class="ips-service"><strong>Family & Carer Support</strong><p>Education, guidance, and practical tools for families and informal carers.</p></article>
+          <article class="ips-service"><strong>Provider & Workforce Consultation</strong><p>Clinical consultation to strengthen capability and consistency of care.</p></article>
+          <article class="ips-service"><strong>Quality of Life Strategies</strong><p>Support focused on meaningful engagement, wellbeing, independence, identity, and purpose.</p></article>
+          <article class="ips-service"><strong>Assessment & Ongoing Support</strong><p>Initial cognitive assessment, geriatric assessment, diagnosis support, and ongoing support.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ips-section ips-form-section" id="online-referral">
+      <div class="ips-container">
+        <p class="ips-eyebrow">Online Referral Form</p>
+        <h2 class="ips-heading">Complete the form electronically.</h2>
+        <p class="ips-subheading">This online form is designed so doctors, referrers, families, and providers can complete the referral without needing to download, print, or scan paperwork.</p>
+        <form class="ips-form-card" name="dementia-referral" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+          <input type="hidden" name="form-name" value="dementia-referral" />
+          <p class="ips-hidden"><label>Do not fill this out: <input name="bot-field" /></label></p>
+          <p class="ips-form-note">Development note: when this is built into the live WordPress website, submissions should be routed to <strong>dementiacare@innerpeace.vision</strong> with spam protection, consent capture, and secure handling.</p>
+
+          <fieldset class="ips-fieldset"><legend class="ips-fieldset-title">Referral Details</legend><div class="ips-form-grid">
+            <div class="ips-form-group"><label for="provider-name">Provider name</label><input id="provider-name" name="provider_name" type="text" placeholder="Provider or organisation name" /></div>
+            <div class="ips-form-group"><label for="sah-level">SAH level</label><input id="sah-level" name="sah_level" type="text" placeholder="Support at Home level" /></div>
+            <div class="ips-form-group"><label for="referrer-name">Referrer name</label><input id="referrer-name" name="referrer_name" type="text" /></div>
+            <div class="ips-form-group"><label for="referrer-phone">Referrer phone</label><input id="referrer-phone" name="referrer_phone" type="tel" /></div>
+            <div class="ips-form-group full"><label for="referrer-email">Referrer email</label><input id="referrer-email" name="referrer_email" type="email" /></div>
+          </div></fieldset>
+
+          <fieldset class="ips-fieldset"><legend class="ips-fieldset-title">Client / Patient Details</legend>
+            <div class="ips-form-grid three"><div class="ips-form-group"><label for="title">Title</label><input id="title" name="title" type="text" /></div><div class="ips-form-group"><label for="gender">Gender</label><input id="gender" name="gender" type="text" /></div><div class="ips-form-group"><label for="dob">Date of birth</label><input id="dob" name="date_of_birth" type="date" /></div></div>
+            <div class="ips-form-grid"><div class="ips-form-group"><label for="given-names">Given names</label><input id="given-names" name="given_names" type="text" /></div><div class="ips-form-group"><label for="surname">Surname</label><input id="surname" name="surname" type="text" /></div><div class="ips-form-group"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" /></div><div class="ips-form-group"><label for="email">Email</label><input id="email" name="email" type="email" /></div><div class="ips-form-group full"><label for="address">Address</label><textarea id="address" name="address" placeholder="Street, suburb, state, postcode"></textarea></div><div class="ips-form-group full"><span class="ips-fieldset-title">Aboriginal or Torres Strait Islander background?</span><div class="ips-radio-row"><label class="ips-option"><input type="radio" name="aboriginal_torres_strait_islander" value="Yes" /> Yes</label><label class="ips-option"><input type="radio" name="aboriginal_torres_strait_islander" value="No" /> No</label><label class="ips-option"><input type="radio" name="aboriginal_torres_strait_islander" value="Prefer not to say" /> Prefer not to say</label></div></div><div class="ips-form-group"><label for="medicare">Medicare number / expiry</label><input id="medicare" name="medicare_number_expiry" type="text" /></div><div class="ips-form-group"><label for="pension">Pension / DVA card details</label><input id="pension" name="pension_dva_card_details" type="text" /></div></div>
+          </fieldset>
+
+          <fieldset class="ips-fieldset"><legend class="ips-fieldset-title">Reason for Referral</legend><div class="ips-form-group full"><label for="assessment-goals">What are you hoping to get out of this assessment?</label><textarea id="assessment-goals" name="assessment_goals" placeholder="E.g. care planning, changed behaviour support, mood, sleep, agitation, family guidance, provider support"></textarea></div><div class="ips-form-group full"><label for="current-concerns">Current concerns or relevant notes</label><textarea id="current-concerns" name="current_concerns"></textarea></div></fieldset>
+
+          <fieldset class="ips-fieldset"><legend class="ips-fieldset-title">Contacts & Care Team</legend><div class="ips-form-grid"><div class="ips-form-group"><label for="next-kin-name">Next of kin name</label><input id="next-kin-name" name="next_of_kin_name" type="text" /></div><div class="ips-form-group"><label for="next-kin-contact">Next of kin phone/email</label><input id="next-kin-contact" name="next_of_kin_contact" type="text" /></div><div class="ips-form-group"><label for="emergency-name">Emergency contact name</label><input id="emergency-name" name="emergency_contact_name" type="text" /></div><div class="ips-form-group"><label for="emergency-contact">Emergency phone/email</label><input id="emergency-contact" name="emergency_contact_details" type="text" /></div><div class="ips-form-group"><label for="decision-maker">Medical treatment decision maker</label><input id="decision-maker" name="medical_treatment_decision_maker" type="text" /></div><div class="ips-form-group"><label for="decision-contact">Decision maker contact</label><input id="decision-contact" name="decision_maker_contact" type="text" /></div><div class="ips-form-group"><label for="gp-name">General practitioner</label><input id="gp-name" name="gp_name" type="text" /></div><div class="ips-form-group"><label for="gp-contact">GP contact details</label><input id="gp-contact" name="gp_contact_details" type="text" /></div><div class="ips-form-group full"><label for="other-professionals">Other health/community professionals involved</label><textarea id="other-professionals" name="other_health_professionals" placeholder="Name, role, phone/email, organisation"></textarea></div></div></fieldset>
+
+          <fieldset class="ips-fieldset"><legend class="ips-fieldset-title">Home Visit Risk Assessment</legend><div class="ips-form-grid"><div class="ips-form-group"><label for="home-visit-agreeable">Are the patient and carer agreeable to a home visit?</label><select id="home-visit-agreeable" name="home_visit_agreeable"><option value="">Please select</option><option>Yes</option><option>No</option><option>Not applicable</option></select></div><div class="ips-form-group"><label for="parking">Is there somewhere to park?</label><select id="parking" name="parking_available"><option value="">Please select</option><option>Yes</option><option>No</option><option>Unsure</option></select></div><div class="ips-form-group"><label for="pets">Are there pets in the house?</label><select id="pets" name="pets_in_house"><option value="">Please select</option><option>Yes</option><option>No</option></select></div><div class="ips-form-group"><label for="smoking">Does anyone smoke in the house?</label><select id="smoking" name="smoking_in_house"><option value="">Please select</option><option>Yes</option><option>No</option></select></div><div class="ips-form-group"><label for="infection">Any infectious diseases present?</label><select id="infection" name="infectious_disease_risk"><option value="">Please select</option><option>Yes</option><option>No</option><option>Unsure</option></select></div><div class="ips-form-group"><label for="weapons">Any firearms or weapons in the home?</label><select id="weapons" name="weapons_in_home"><option value="">Please select</option><option>Yes</option><option>No</option><option>Unsure</option></select></div><div class="ips-form-group full"><label for="risk-notes">Risk assessment notes / access information</label><textarea id="risk-notes" name="risk_assessment_notes" placeholder="E.g. access issues, doorbell not working, animals, additional people present, safety concerns"></textarea></div></div></fieldset>
+
+          <fieldset class="ips-fieldset"><legend class="ips-fieldset-title">Consent</legend><div class="ips-consent"><label><input type="checkbox" name="consent_to_collect_information" value="Yes" required /> I confirm consent has been provided to collect and use the personal and health information supplied for the purpose of assessment, referral, care planning, and relevant communication.</label><label><input type="checkbox" name="consent_to_contact_professionals" value="Yes" /> I consent to Inner Peace Services contacting relevant health/community professionals involved in care where appropriate.</label><label><input type="checkbox" name="confirm_information_accurate" value="Yes" required /> I confirm the information provided is accurate to the best of my knowledge.</label></div><button class="ips-btn ips-btn-primary" type="submit">Submit Referral Form</button></fieldset>
+        </form>
+      </div>
+    </section>
+
+    <section class="ips-section ips-section-soft" id="ips-contact">
+      <div class="ips-container">
+        <p class="ips-eyebrow">Contact</p><h2 class="ips-heading">Speak with the Dementia Care team.</h2>
+        <div class="ips-contact-grid"><div class="ips-contact-card"><h3>Inner Peace Services</h3><p>Specialist support for dementia care across East Gippsland.</p></div><div class="ips-contact-card"><h3>Annette Keat</h3><p><a href="tel:0419853811">0419 853 811</a></p></div><div class="ips-contact-card"><h3>Lisa Tyter</h3><p><a href="tel:0477051130">0477 051 130</a></p></div><div class="ips-contact-card"><h3>Email & Website</h3><p><a href="mailto:dementiacare@innerpeace.vision">dementiacare@innerpeace.vision</a></p><p><a href="https://www.innerpeace.vision" target="_blank" rel="noopener">www.innerpeace.vision</a></p></div></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
